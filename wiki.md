@@ -8,7 +8,7 @@ El ejemplo es original, tomado en base una idea generada con inteligencia artifi
 ![Diagrama de Chen](https://user-images.githubusercontent.com/94185672/233879505-f48bb7fc-47b6-4b90-b20c-8e1d46443c78.png)
 
 ## Diagrama con Datamodeler
-![Diagrama Datamodeler]()
+![Diagrama Datamodeler](https://github.com/Bloque-SID/problema-de-modelado-t12/blob/main/docs/images/Diagramas/dataModeler_T12.png)
 
 # Algoritmo de transformacion de diagrama de chen a base de datos SQL
 ## Paso 1
