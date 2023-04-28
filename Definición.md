@@ -4,126 +4,115 @@
 |Definicón|Entidad del jugador |
 |Tipo|Fundamental|
 
-Campos
-|Campo|Tamaño|Tipo de dato|Descripción|
-|--|--|--|--|
-|Nombre|20|String|Nombre del personaje|
-|IDPersonaje|7|String|Identificación del personaje|
+| Campo | Tamaño | Tipo de dato | Descripción |
+|-------|--------|--------------|-------------|
+| Nombre | 50     | VARCHAR2     | Nombre del personaje, no puede ser nulo |
+| IdPersonaje | 10 | NUMBER       | Identificador único del personaje, no puede ser nulo |
+| IdRazaPersonaje | 10 | NUMBER   | Identificador único de la raza del personaje, no puede ser nulo |
+    
+La tabla Personaje tiene una clave primaria compuesta por el campo IdPersonaje, y también una clave foránea llamada FK_Personaje_Raza que referencia a la tabla RazaPersonaje a través del campo IdRazaPersonaje.
 
 |Nombre|Habilidad|
 |--|--|
 |Definicón|Capacidad con ciertas caracteristicas|
 |Tipo|Fundamental|
 
-Campos
-|Campo|Tamaño|Tipo de dato|Descripción|
-|--|--|--|--|
-|Nombre|20|String|Nombre de la habilidad|
-|Descripción|500|String|Descripción de la habilidad|
-|Tipo|10|String|Tipo de la habilidad ("Ofensiva", "Defensiva", "Curativa", "Mágica",”Pasiva”)|
-|IDhabilidad|6|String|Identificación de la habilidad|
+| Campo | Tamaño | Tipo de dato | Descripción |
+| --- | --- | --- | --- |
+| Nombre | 50 | VARCHAR2 | Nombre de la habilidad, no nulo |
+| Descripcion | 200 | VARCHAR2 | Descripción detallada de la habilidad |
+| Tipo | 20 | VARCHAR2 | Tipo de la habilidad, no nulo |
+| IdHabilidad | 10 | NUMBER | Identificador único de la habilidad, no nulo y clave primaria |
 
 |Nombre|Objeto|
 |--|--|
 |Definicón|Cosa material inanimada que usa el personaje|
 |Tipo|Fundamental|
 
-Campos
-|Campo|Tamaño|Tipo de dato|Descripción|
-|--|--|--|--|
-|Nombre|15|String|Nombre del objeto|
-|Tipo|20|String|Tipo de objeto("Arma", "Armadura", "Consumible", "Libro de hechizos")|
-|IDObj|7|String|Identificación del objeto|
+| Campo | Tamaño | Tipo de dato | Descripción |
+| --- | --- | --- | --- |
+| IdPersonaje | 10 | NUMBER | Identificador del personaje que posee el objeto |
+| Nombre | 50 | VARCHAR2 | Nombre del objeto |
+| Descripcion | 200 | VARCHAR2 | Descripción del objeto |
+| Tipo | 20 | VARCHAR2 | Tipo de objeto |
+| Cantidad | - | NUMBER | Cantidad de objetos que posee el personaje |
 
 |Nombre|Monstruo|
 |--|--|
 |Definicón|Entidad sin conciencia que ataca a las razas|
 |Tipo|Fundamental|
 
-Campos
 |Campo|Tamaño|Tipo de dato|Descripción|
 |--|--|--|--|
-|Nombre|20|String|Nombre del monstruo|
-|Descripción|500|String|Descripción del monstruo|
-|Nivel|3|Entero|Nivel del monstruo|
-|IDMon|6|String|Identificador del monstruo|
+|IdMonstruo||NUMBER(10)|Identificador único del monstruo|
+|Descripcion|200|VARCHAR2|Descripción del monstruo|
+|Nombre|50|VARCHAR2|Nombre del monstruo|
+|Nivel||NUMBER(3)|Nivel del monstruo|
+|IdRazaMonstruo||NUMBER(10)|Identificador único de la raza del monstruo|
 
-|Nombre|Raza|
+
+|Nombre|RazaPersonaje|
 |--|--|
 |Definicón|Cada uno de los grupos étnicos que aparecen en el mundo|
 |Tipo|Secundaria|
 
-Campos
+| Campo | Tamaño | Tipo de dato | Descripción |
+| --- | --- | --- | --- |
+| IdRazaPersonaje | 10 | NUMBER | Identificador único de la raza del personaje |
+| Nombre | 50 | VARCHAR2 | Nombre de la raza del personaje, no puede ser nulo |
+
+|Nombre|RazaMonstruo|
+|--|--|
+|Definicón|Cada uno de los monstruos que aparecen en el mundo|
+|Tipo|Secundaria|
+
 |Campo|Tamaño|Tipo de dato|Descripción|
 |--|--|--|--|
-|Nombre|15|String|Nombre de la raza|
-|IDraza|7|String|Identificador de la raza|
+|IdRazaMonstruo|10|NUMBER|Identificador único de la raza de monstruo|
+|Nombre|50|VARCHAR2|Nombre de la raza del monstruo, no nulo|
 
 |Nombre|Clase|
 |--|--|
 |Definicón|Profesión con caracteristicas unicas|
 |Tipo|Secundaria|
 
-Campos
-|Campo|Tamaño|Tipo de dato|Descripción|
-|--|--|--|--|
-|Nombre|15|String|Nombre de la clase|
-|IDClase|7|String|Identificador de la clase|
+| Campo | Tamaño | Tipo de dato | Descripción |
+|-------|--------|-------------|-------------|
+| IdClase | 10 | NUMBER | Identificador único de la clase |
+| Nombre | 50 | VARCHAR2 | Nombre de la clase, no puede ser nulo |
 
 |Nombre|Característica|
 |--|--|
 |Definicón|Cualidadades  o propiedades unicas|
 |Tipo|Secundaria|
 
-Campos
-|Campo|Tamaño|Tipo de dato|Descripción|
-|--|--|--|--|
-|Nombre|15|String|Nombre de la caracteristica|
-|IDCaracteristica|6|String|Identificación de la caracteristica|
+| Campo | Tamaño | Tipo de dato | Descripción |
+| --- | --- | --- | --- |
+| IdCaracteristica | 10 | NUMBER | Identificador único de la característica |
+| Nombre | 50 | VARCHAR2 | Nombre de la característica |
+| Tipo | 50 | VARCHAR2 | Tipo de la característica |
+| Valor | 10 | NUMBER | Valor numérico de la característica |
 
-|Nombre|Habilidades|
+|Nombre|Habilidad|
 |--|--|
-|Definicón||
-|Tipo|Debil|
+|Definicón|Es una entidad del sistema que almacena información sobre las habilidades que tienen los personajes y los monstruos en el juego|
+|Tipo|Secundaria|
 
 Campos
-|Campo|Tamaño|Tipo de dato|Descripción|
-|--|--|--|--|
-|IDPersonaje|7|String|Identificación del personaje|
-|IDhabilidad|6|String|Identificación de la habilidad|
-|Nivel|3|Entero|Nivel de la habilidad|
+| Campo | Tamaño | Tipo de dato | Descripción |
+| --- | --- | --- | --- |
+| Nombre | 50 | VARCHAR2 | Nombre de la habilidad, no nulo |
+| Descripcion | 200 | VARCHAR2 | Descripción detallada de la habilidad |
+| Tipo | 20 | VARCHAR2 | Tipo de la habilidad, no nulo |
+| IdHabilidad | 10 | NUMBER | Identificador único de la habilidad, no nulo y clave primaria |
 
-|Nombre|Clases|
+|Nombre|Clase|
 |--|--|
 |Definicón|Las clases de un personaje|
 |Tipo|Debil|
 
 Campos
-|Campo|Tamaño|Tipo de dato|Descripción|
-|--|--|--|--|
-|IDPersonaje|7|String|Identificación del personaje|
-|IDClase|7|String|Identificador de la clase|
-|Nivel|3|Entero|Nivel de la habilidad|
-
-
-|Nombre|CarcateristicasClase|
-|--|--|
-|Definicón|Las caracteristicas de una clase|
-|Tipo|Debil|
-
-Campos
-|Campo|Tamaño|Tipo de dato|Descripción|
-|--|--|--|--|
-|IDClase|7|String|Identificador de la clase|
-|IDCaracteristica|6|String|Identificación de la caracteristica|
-
-|Nombre|CarcateristicasRaza|
-|--|--|
-|Definicón|Las caracteristicas de un raza|
-|Tipo|Debil|
-
-Campos
-|Campo|Tamaño|Tipo de dato|Descripción|
-|--|--|--|--|
-|IDraza|7|String|Identificador de la raza|
-|IDCaracteristica|6|String|Identificación de la caracteristica|
+| Campo | Tamaño | Tipo de dato | Descripción |
+|-------|--------|-------------|-------------|
+| IdClase | 10 | NUMBER | Identificador único de la clase |
+| Nombre | 50 | VARCHAR2 | Nombre de la clase, no puede ser nulo |
