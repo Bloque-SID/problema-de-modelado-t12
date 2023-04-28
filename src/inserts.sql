@@ -446,7 +446,7 @@ INSERT INTO Objetivos (IdObjetivo, Nombre, Descripcion, Dificultad, Progreso, Es
 INSERT INTO Objetivos (IdObjetivo, Nombre, Descripcion, Dificultad, Progreso, Estado) VALUES (46, 'Objetivo 46', 'Descripcion del objetivo 46', 1, 0, 'No iniciado');
 INSERT INTO Objetivos (IdObjetivo, Nombre, Descripcion, Dificultad, Progreso, Estado) VALUES (47, 'Aprender un nuevo idioma', 'Iniciar un curso en línea de inglés', 5, 20, 'En progreso');
 INSERT INTO Objetivos (IdObjetivo, Nombre, Descripcion, Dificultad, Progreso, Estado) VALUES (48, 'Hacer ejercicio regularmente', 'Ir al gimnasio 3 veces por semana', 3, 10, 'En progreso');
-INSERT INTO Objetivos (IdObjetivo, Nombre, Descripcion, Dificultad, Progreso, Estado) VALUES (49, 'Aprender a cocinar platos italianos', 'Tomar un curso en línea de cocina italiana', 6, 0, 'Pendiente');
+INSERT INTO Objetivos (IdObjetivo, Nombre, Descripcion, Dificultad, Progreso, Estado) VALUES (49, 'Aprender a cocinar platos italianos', 'Tomar un curso en línea de cocina italiana', 6, 100, 'Completo');
 INSERT INTO Objetivos (IdObjetivo, Nombre, Descripcion, Dificultad, Progreso, Estado) VALUES (50, 'Leer un libro cada mes', 'Leer "Los Miserables" de Victor Hugo', 2, 5, 'En progreso');
 INSERT INTO Clase (IdClase, Nombre) VALUES (1, 'Guerrero');
 INSERT INTO Clase (IdClase, Nombre) VALUES (2, 'Mago');
